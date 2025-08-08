@@ -52,9 +52,13 @@ lib/app/core/
 
 - **Framework**: Flutter
 - **State Management**: GetX
-- **Backend**: Firebase (akan diimplementasikan)
+- **Backend**: Firebase (Firestore, Auth, Storage)
 - **AI Integration**: GPT API + K-means Clustering (akan diimplementasikan)
-- **Font**: Google Fonts (Inter)
+- **UI/UX**: Google Fonts (Inter), Lottie Animations, FL Chart
+- **HTTP Client**: HTTP & Dio
+- **Local Storage**: Shared Preferences
+- **Form Handling**: Form Builder Validators
+- **File Management**: File Picker & Firebase Storage
 
 ## 📋 Fitur Utama (Berdasarkan PRD)
 
@@ -64,6 +68,7 @@ lib/app/core/
 - [x] Typography system
 - [x] Color system
 - [x] Spacing system
+- [x] Dependencies setup (Firebase, HTTP, UI components)
 
 ### 🔄 Akan Diimplementasikan
 - [ ] Firebase Authentication
@@ -112,6 +117,7 @@ AppTextField(
 ## 📚 Dokumentasi
 
 - [Theme Guide](docs/theme_guide.md) - Panduan lengkap penggunaan theme system
+- [Dependencies Guide](docs/dependencies.md) - Dokumentasi dependencies dan setup
 - [PRD](docs/prd.md) - Product Requirements Document
 
 ## 🔧 Development

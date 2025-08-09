@@ -8,7 +8,7 @@ void main() {
   runApp(
     GetMaterialApp(
       title: "Bimbingin App",
-      initialRoute: AppPages.INITIAL,
+      initialRoute: AppPages.initial,
       getPages: AppPages.routes,
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,

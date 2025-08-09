@@ -1,17 +1,19 @@
+import 'package:bimbingin_app/app/core/widgets/app_button.dart';
+import 'package:bimbingin_app/app/core/theme/app_colors.dart';
+import 'package:bimbingin_app/app/core/theme/app_typography.dart';
+import 'package:bimbingin_app/app/modules/auth/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/auth_controller.dart';
-import '../widgets/role_button.dart';
 
 class ChooseRoleView extends GetView<AuthController> {
   const ChooseRoleView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xFF1E88E5),
+      backgroundColor: AppColors.primary,
       body: Stack(
         children: [
           // Hero image + overlay
@@ -22,7 +24,7 @@ class ChooseRoleView extends GetView<AuthController> {
               fit: StackFit.expand,
               children: [
                 Image.asset('assets/images/hero_role.png', fit: BoxFit.cover),
-                Container(color: const Color(0xFF1E88E5).withOpacity(0.45)),
+                Container(color: AppColors.primary.withOpacity(0.45)),
               ],
             ),
           ),
@@ -33,7 +35,7 @@ class ChooseRoleView extends GetView<AuthController> {
               // Card lebih tinggi dan rounded, shadow
               padding: const EdgeInsets.fromLTRB(24, 40, 24, 40),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.background,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(36),
                   topRight: Radius.circular(36),
@@ -53,34 +55,34 @@ class ChooseRoleView extends GetView<AuthController> {
                   Text(
                     'Mengajar dan Belajar\nLebih Efektif Sesuai Gayamu!',
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.headlineMedium?.copyWith(
+                    style: AppTypography.headlineMedium.copyWith(
                       fontWeight: FontWeight.w700,
                       fontSize: 24,
-                      color: const Color(0xFF212121),
+                      color: AppColors.textPrimary,
                     ),
                   ),
                   const SizedBox(height: 14),
                   Text(
                     'Masuk dan nikmati pengalaman yang terbaik',
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: const Color(0xFF9E9E9E),
+                    style: AppTypography.bodyMedium.copyWith(
+                      color: AppColors.textTertiary,
                       fontSize: 16,
                     ),
                   ),
                   const SizedBox(height: 36),
                   RoleButton(
                     text: 'Masuk Sebagai Guru',
-                    color: const Color(0xFF2196F3), // Lebih vivid
-                    textColor: Colors.white,
-                    onPressed: () => controller.onRoleSelected('guru'),
+                    color: AppColors.primary,
+                    textColor: AppColors.textInverse,
+                    onPressed: () => Get.to(() => const LoginView()),
                   ),
                   const SizedBox(height: 18),
                   RoleButton(
                     text: 'Masuk Sebagai Siswa',
-                    color: const Color(0xFF1565C0),
-                    textColor: Colors.white,
-                    onPressed: () => controller.onRoleSelected('siswa'),
+                    color: AppColors.primaryDark,
+                    textColor: AppColors.textInverse,
+                    onPressed: () => Get.to(() => const LoginView()),
                   ),
                 ],
               ),

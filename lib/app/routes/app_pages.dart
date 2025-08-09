@@ -10,16 +10,16 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.AUTH;
+  static const initial = Routes.auth;
 
   static final routes = [
     GetPage(
-      name: _Paths.HOME,
+      name: _Paths.home,
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.AUTH,
+      name: _Paths.auth,
       page: () => const ChooseRoleView(),
       binding: AuthBinding(),
     ),

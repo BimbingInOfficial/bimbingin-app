@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  //TODO: Implement HomeController
+class GuruChatbotController extends GetxController {
+  //TODO: Implement GuruChatbotController
 
   final count = 0.obs;
 

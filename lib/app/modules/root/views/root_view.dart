@@ -3,7 +3,7 @@ import 'package:bimbingin_app/app/modules/guru_profilepage/views/guru_profilepag
 import 'package:bimbingin_app/app/modules/guru_ruangbelajar/views/guru_ruangbelajar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/widgets/navbar.dart'; 
+import '../../../core/widgets/navbar.dart';
 import '../../guru_chatbot/views/guru_chatbot_view.dart';
 import '../controllers/root_controller.dart';
 
@@ -15,19 +15,30 @@ class RootView extends GetView<RootController> {
     final pages = const [
       GuruHomepageView(),
       GuruChatbotView(),
-      GuruRuangbelajarView(),   
+      GuruRuangbelajarView(),
       GuruProfilepageView(),
     ];
 
-    return Obx(() => Scaffold(
-          body: IndexedStack(
+    return Obx(
+      () => Scaffold(
+        body: SafeArea(
+          top: true,
+          bottom: false, 
+          child: IndexedStack(
             index: controller.currentIndex.value,
-            children: pages,
+            children: const [
+              GuruHomepageView(),
+              GuruChatbotView(),
+              GuruRuangbelajarView(),
+              GuruProfilepageView(),
+            ],
           ),
-          bottomNavigationBar: Navbar(
-            currentIndex: controller.currentIndex.value,
-            onTap: controller.onTabSelected,
-          ),
-        ));
+        ),
+        bottomNavigationBar: Navbar(
+          currentIndex: controller.currentIndex.value,
+          onTap: controller.onTabSelected,
+        ),
+      ),
+    );
   }
 }

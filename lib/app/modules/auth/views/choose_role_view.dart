@@ -1,7 +1,8 @@
 import 'package:bimbingin_app/app/core/widgets/app_button.dart';
 import 'package:bimbingin_app/app/core/theme/app_colors.dart';
 import 'package:bimbingin_app/app/core/theme/app_typography.dart';
-import 'package:bimbingin_app/app/modules/auth/views/login_view.dart';
+import 'package:bimbingin_app/app/modules/auth/views/login_guru_view.dart';
+import 'package:bimbingin_app/app/modules/auth/views/login_siswa_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/auth_controller.dart';
@@ -75,14 +76,14 @@ class ChooseRoleView extends GetView<AuthController> {
                     text: 'Masuk Sebagai Guru',
                     color: AppColors.primary,
                     textColor: AppColors.textInverse,
-                    onPressed: () => Get.to(() => const LoginView()),
+                    onPressed: () => Get.to(() => const LoginGuruView()),
                   ),
                   const SizedBox(height: 18),
                   RoleButton(
                     text: 'Masuk Sebagai Siswa',
                     color: AppColors.primaryDark,
                     textColor: AppColors.textInverse,
-                    onPressed: () => Get.to(() => const LoginView()),
+                    onPressed: () => Get.to(() => const LoginSiswaView()),
                   ),
                 ],
               ),

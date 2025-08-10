@@ -1,3 +1,5 @@
+import 'package:bimbingin_app/app/modules/auth/views/login_guru_view.dart';
+import 'package:bimbingin_app/app/modules/auth/views/login_siswa_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
@@ -12,6 +14,7 @@ import '../modules/guru_ruangbelajar/bindings/guru_ruangbelajar_binding.dart';
 import '../modules/guru_ruangbelajar/views/guru_ruangbelajar_view.dart';
 import '../modules/kuesioner/bindings/kuesioner_binding.dart';
 import '../modules/kuesioner/views/kuesioner_siswa_view.dart';
+import '../modules/kuesioner/views/kuesioner_guru_view.dart';
 import '../modules/root/bindings/root_binding.dart';
 import '../modules/root/views/root_view.dart';
 
@@ -20,17 +23,27 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.kuesionerSiswa;
+  static const initial = Routes.auth;
 
   static final routes = [
     GetPage(
-      name: _Paths.home,
+      name: _Paths.root,
       page: () => const RootView(),
       binding: RootBinding(),
     ),
     GetPage(
       name: _Paths.auth,
       page: () => const ChooseRoleView(),
+      binding: AuthBinding(),
+    ),
+    GetPage(
+      name: _Paths.loginSiswa,
+      page: () => const LoginSiswaView(),
+      binding: AuthBinding(),
+    ),
+    GetPage(
+      name: _Paths.loginGuru,
+      page: () => const LoginGuruView(),
       binding: AuthBinding(),
     ),
     GetPage(
@@ -61,6 +74,11 @@ class AppPages {
     GetPage(
       name: _Paths.kuesionerSiswa,
       page: () => const KuesionerSiswaView(),
+      binding: KuesionerBinding(),
+    ),
+    GetPage(
+      name: _Paths.kuesionerGuru,
+      page: () => const KuesionerGuruView(),
       binding: KuesionerBinding(),
     ),
   ];

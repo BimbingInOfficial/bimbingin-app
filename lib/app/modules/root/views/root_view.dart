@@ -23,7 +23,7 @@ class RootView extends GetView<RootController> {
       () => Scaffold(
         body: SafeArea(
           top: true,
-          bottom: false, 
+          bottom: false,
           child: IndexedStack(
             index: controller.currentIndex.value,
             children: const [

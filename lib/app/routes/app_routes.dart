@@ -10,8 +10,10 @@ abstract class Routes {
   static const root = _Paths.root;
   static const home = _Paths.home;
   static const auth = _Paths.auth;
-  static const login = _Paths.login;
+  static const loginSiswa = _Paths.loginSiswa;
+  static const loginGuru = _Paths.loginGuru;
   static const kuesionerSiswa = _Paths.kuesionerSiswa;
+  static const kuesionerGuru = _Paths.kuesionerGuru;
 }
 
 abstract class _Paths {
@@ -23,6 +25,8 @@ abstract class _Paths {
   static const root = '/root';
   static const home = '/home';
   static const auth = '/auth';
-  static const login = '/login';
+  static const loginSiswa = '/login-siswa';
+  static const loginGuru = '/login-guru';
   static const kuesionerSiswa = '/kuesioner-siswa';
+  static const kuesionerGuru = '/kuesioner-guru';
 }

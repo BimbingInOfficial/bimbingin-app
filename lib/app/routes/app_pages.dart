@@ -16,31 +16,31 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ROOT;
+  static const INITIAL = Routes.root;
 
   static final routes = [
     GetPage(
-      name: _Paths.GURU_HOMEPAGE,
+      name: _Paths.guruHomePage,
       page: () => const GuruHomepageView(),
       binding: GuruHomepageBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_CHATBOT,
+      name: _Paths.guruChatBot,
       page: () => const GuruChatbotView(),
       binding: GuruChatbotBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_RUANGBELAJAR,
+      name: _Paths.guruRuangBelajar,
       page: () => const GuruRuangbelajarView(),
       binding: GuruRuangbelajarBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_PROFILEPAGE,
+      name: _Paths.guruProfilePage,
       page: () => const GuruProfilepageView(),
       binding: GuruProfilepageBinding(),
     ),
     GetPage(
-      name: _Paths.ROOT,
+      name: _Paths.root,
       page: () => const RootView(),
       binding: RootBinding(),
     ),

@@ -3,18 +3,18 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const GURU_HOMEPAGE = _Paths.GURU_HOMEPAGE;
-  static const GURU_CHATBOT = _Paths.GURU_CHATBOT;
-  static const GURU_RUANGBELAJAR = _Paths.GURU_RUANGBELAJAR;
-  static const GURU_PROFILEPAGE = _Paths.GURU_PROFILEPAGE;
-  static const ROOT = _Paths.ROOT;
+  static const guruHomePage = _Paths.guruHomePage;
+  static const guruChatBot = _Paths.guruChatBot;
+  static const guruRuangBelajar = _Paths.guruRuangBelajar;
+  static const guruProfilePage = _Paths.guruProfilePage;
+  static const root = _Paths.root;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const GURU_HOMEPAGE = '/guru-homepage';
-  static const GURU_CHATBOT = '/guru-chatbot';
-  static const GURU_RUANGBELAJAR = '/guru-ruangbelajar';
-  static const GURU_PROFILEPAGE = '/guru-profilepage';
-  static const ROOT = '/root';
+  static const guruHomePage = '/guru-homepage';
+  static const guruChatBot = '/guru-chatbot';
+  static const guruRuangBelajar = '/guru-ruangbelajar';
+  static const guruProfilePage = '/guru-profilepage';
+  static const root = '/root';
 }

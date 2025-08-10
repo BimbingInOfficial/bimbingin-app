@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../controllers/siswa_ruangbelajar_controller.dart';
+import 'ruang_belajar_view.dart';
 
 class SiswaRuangbelajarView extends GetView<SiswaRuangbelajarController> {
   const SiswaRuangbelajarView({super.key});
@@ -89,6 +90,7 @@ class SiswaRuangbelajarView extends GetView<SiswaRuangbelajarController> {
                             siswaCount: 280,
                             guruCount: 30,
                             kodeRuangan: '7ztlbhtn',
+                            onTap: () => Get.to(() => const RuangBelajarView()),
                           ),
                           const SizedBox(height: AppSpacing.md),
                           RuangBelajarCard(
@@ -96,6 +98,7 @@ class SiswaRuangbelajarView extends GetView<SiswaRuangbelajarController> {
                             siswaCount: 280,
                             guruCount: 30,
                             kodeRuangan: '7ztlbhtn',
+                            onTap: () => Get.to(() => const RuangBelajarView()),
                           ),
                           const SizedBox(height: AppSpacing.md),
                           RuangBelajarCard(
@@ -103,6 +106,7 @@ class SiswaRuangbelajarView extends GetView<SiswaRuangbelajarController> {
                             siswaCount: 280,
                             guruCount: 30,
                             kodeRuangan: '7ztlbhtn',
+                            onTap: () => Get.to(() => const RuangBelajarView()),
                           ),
                         ],
                       ),

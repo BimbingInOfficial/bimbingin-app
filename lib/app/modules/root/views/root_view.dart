@@ -19,22 +19,19 @@ class RootView extends GetView<RootController> {
       GuruProfilepageView(),
     ];
 
-    return Obx(
-      () => Scaffold(
-        body: SafeArea(
-          top: true,
-          bottom: false,
-          child: IndexedStack(
+    return Scaffold(
+      body: SafeArea(
+        top: true,
+        bottom: false,
+        child: Obx(
+          () => IndexedStack(
             index: controller.currentIndex.value,
-            children: const [
-              GuruHomepageView(),
-              GuruChatbotView(),
-              GuruRuangbelajarView(),
-              GuruProfilepageView(),
-            ],
+            children: pages,
           ),
         ),
-        bottomNavigationBar: Navbar(
+      ),
+      bottomNavigationBar: Obx(
+        () => Navbar(
           currentIndex: controller.currentIndex.value,
           onTap: controller.onTabSelected,
         ),

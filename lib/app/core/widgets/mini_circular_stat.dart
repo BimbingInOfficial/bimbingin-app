@@ -59,7 +59,7 @@ class MiniCircularStat extends StatelessWidget {
           child: Text(
             label,
             textAlign: TextAlign.center,
-            style: AppTypography.labelLarge.copyWith(color: Colors.black54),
+            style: AppTypography.labelSmall.copyWith(color: Colors.black54),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),

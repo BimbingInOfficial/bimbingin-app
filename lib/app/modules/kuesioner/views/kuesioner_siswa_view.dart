@@ -6,6 +6,7 @@ import '../../../core/theme/app_typography.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/curve_bottom_banner.dart';
+import '../../../routes/app_pages.dart';
 
 class KuesionerSiswaView extends GetView<KuesionerController> {
   const KuesionerSiswaView({super.key});
@@ -112,7 +113,7 @@ class KuesionerSiswaView extends GetView<KuesionerController> {
                   AppPrimaryButton(
                     text: 'Selanjutnya',
                     onPressed: () {
-                      // TODO: Implement next action
+                      Get.toNamed(Routes.siswaHomepage);
                     },
                     isFullWidth: true,
                     size: AppButtonSize.large,

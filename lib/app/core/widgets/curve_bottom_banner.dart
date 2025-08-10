@@ -8,8 +8,8 @@ class BottomArcClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    final w  = size.width;
-    final h  = size.height;
+    final w = size.width;
+    final h = size.height;
     final ch = curveHeight.clamp(0, 200).toDouble(); // aman dari nilai ekstrem
 
     return Path()
@@ -47,15 +47,16 @@ class CurvedBottomBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final safeTop = includeSafeTopPadding ? MediaQuery.of(context).padding.top : 0.0;
+    final safeTop = includeSafeTopPadding
+        ? MediaQuery.of(context).padding.top
+        : 0.0;
 
     final content = Container(
       width: double.infinity,
-      padding: padding.add(EdgeInsets.only(top: safeTop)),
-      decoration: BoxDecoration(
-        color: color,
-        gradient: gradient,
-      ),
+      padding: padding.add(
+        EdgeInsets.only(top: safeTop),
+      ), // Hanya tambahkan safeTop jika includeSafeTopPadding true
+      decoration: BoxDecoration(color: color, gradient: gradient),
       child: child,
     );
 
@@ -65,7 +66,10 @@ class CurvedBottomBanner extends StatelessWidget {
     );
 
     return overlayStyle != null
-        ? AnnotatedRegion<SystemUiOverlayStyle>(value: overlayStyle!, child: clipped)
+        ? AnnotatedRegion<SystemUiOverlayStyle>(
+            value: overlayStyle!,
+            child: clipped,
+          )
         : clipped;
   }
 }

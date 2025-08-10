@@ -14,6 +14,7 @@ abstract class Routes {
   static const loginGuru = _Paths.loginGuru;
   static const kuesionerSiswa = _Paths.kuesionerSiswa;
   static const kuesionerGuru = _Paths.kuesionerGuru;
+  static const siswaHomepage = _Paths.siswaHomepage;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const loginGuru = '/login-guru';
   static const kuesionerSiswa = '/kuesioner-siswa';
   static const kuesionerGuru = '/kuesioner-guru';
+  static const siswaHomepage = '/siswa-homepage';
 }

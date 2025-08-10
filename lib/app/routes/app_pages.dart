@@ -1,9 +1,9 @@
-import 'package:bimbingin_app/app/modules/auth/views/login_guru_view.dart';
-import 'package:bimbingin_app/app/modules/auth/views/login_siswa_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/auth/views/choose_role_view.dart';
+import '../modules/auth/views/login_guru_view.dart';
+import '../modules/auth/views/login_siswa_view.dart';
 import '../modules/guru_chatbot/bindings/guru_chatbot_binding.dart';
 import '../modules/guru_chatbot/views/guru_chatbot_view.dart';
 import '../modules/guru_homepage/bindings/guru_homepage_binding.dart';
@@ -13,10 +13,12 @@ import '../modules/guru_profilepage/views/guru_profilepage_view.dart';
 import '../modules/guru_ruangbelajar/bindings/guru_ruangbelajar_binding.dart';
 import '../modules/guru_ruangbelajar/views/guru_ruangbelajar_view.dart';
 import '../modules/kuesioner/bindings/kuesioner_binding.dart';
-import '../modules/kuesioner/views/kuesioner_siswa_view.dart';
 import '../modules/kuesioner/views/kuesioner_guru_view.dart';
+import '../modules/kuesioner/views/kuesioner_siswa_view.dart';
 import '../modules/root/bindings/root_binding.dart';
 import '../modules/root/views/root_view.dart';
+import '../modules/siswa_homepage/bindings/siswa_homepage_binding.dart';
+import '../modules/siswa_homepage/views/siswa_homepage_view.dart';
 
 part 'app_routes.dart';
 
@@ -67,11 +69,6 @@ class AppPages {
       binding: GuruProfilepageBinding(),
     ),
     GetPage(
-      name: _Paths.root,
-      page: () => const RootView(),
-      binding: RootBinding(),
-    ),
-    GetPage(
       name: _Paths.kuesionerSiswa,
       page: () => const KuesionerSiswaView(),
       binding: KuesionerBinding(),
@@ -80,6 +77,11 @@ class AppPages {
       name: _Paths.kuesionerGuru,
       page: () => const KuesionerGuruView(),
       binding: KuesionerBinding(),
+    ),
+    GetPage(
+      name: _Paths.siswaHomepage,
+      page: () => const SiswaHomepageView(),
+      binding: SiswaHomepageBinding(),
     ),
   ];
 }

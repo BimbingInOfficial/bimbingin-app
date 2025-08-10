@@ -1,5 +1,7 @@
+import 'package:bimbingin_app/app/modules/kuesioner/views/kuesioner_siswa_view.dart';
 import 'package:flutter/material.dart';
 import 'package:bimbingin_app/app/core/core.dart';
+import 'package:get/get.dart';
 
 class LoginSiswaView extends StatelessWidget {
   const LoginSiswaView({super.key});
@@ -185,7 +187,13 @@ class _LoginCardState extends State<_LoginCard> {
           bottom: -28,
           left: 0,
           right: 0,
-          child: Center(child: _RoundActionButton(onPressed: () {})),
+          child: Center(
+            child: _RoundActionButton(
+              onPressed: () {
+                Get.to(() => const KuesionerSiswaView());
+              },
+            ),
+          ),
         ),
       ],
     );

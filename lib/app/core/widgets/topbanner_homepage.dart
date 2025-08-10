@@ -10,7 +10,7 @@ class TopbannerHomepage extends StatelessWidget {
   final String greeting;
   final String title;
   final String subtitle;
-  final double percent;  // 0..100
+  final double percent; // 0..100
   final String label;
   final double curveHeight;
 
@@ -28,12 +28,17 @@ class TopbannerHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CurvedBottomBanner(
       curveHeight: curveHeight,
-      includeSafeTopPadding: true,
+      includeSafeTopPadding:
+          false, // Ubah menjadi false agar tidak ada safe area otomatis
       padding: EdgeInsets.fromLTRB(
         AppSpacing.xl,
-        AppSpacing.xl, // safe area ditambahkan otomatis oleh wrapper
+        AppSpacing.xl +
+            MediaQuery.of(
+              context,
+            ).padding.top, // Tambahkan padding top manual untuk safe area
         AppSpacing.xl,
-        AppSpacing.xxl + curveHeight / 2, // ruang ekstra agar arc tidak potong konten
+        AppSpacing.xxl +
+            curveHeight / 2, // ruang ekstra agar arc tidak potong konten
       ),
       color: AppColors.primary,
       overlayStyle: SystemUiOverlayStyle.light, // ikon status bar terang
@@ -63,11 +68,7 @@ class TopbannerHomepage extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.xl),
           Center(
-            child: CircularScore(
-              percent: percent,
-              label: label,
-              size: 200,
-            ),
+            child: CircularScore(percent: percent, label: label, size: 200),
           ),
         ],
       ),

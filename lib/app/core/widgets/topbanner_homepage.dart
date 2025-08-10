@@ -1,20 +1,20 @@
+import 'package:bimbingin_app/app/core/widgets/curve_bottom_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../theme/app_colors.dart';
 import '../theme/app_spacing.dart';
 import '../theme/app_typography.dart';
 import 'circular_score.dart';
 
-class TopBanner extends StatelessWidget {
-  final String greeting; // e.g., "Halo Tenti! 👋"
-  final String title;    // e.g., "Gaya mengajar dominan..."
-  final String subtitle; // e.g., "Yuk, optimalkan..."
+class TopbannerHomepage extends StatelessWidget {
+  final String greeting;
+  final String title;
+  final String subtitle;
   final double percent;  // 0..100
-  final String label;    // e.g., "Expert"
-  final double curveHeight; // depth of the bottom arc
+  final String label;
+  final double curveHeight;
 
-  const TopBanner({
+  const TopbannerHomepage({
     super.key,
     required this.greeting,
     required this.title,
@@ -26,98 +26,51 @@ class TopBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final topInset = MediaQuery.of(context).padding.top; 
-
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light, // status bar icons light on blue bg
-      child: ClipPath(
-        clipper: _BottomArcClipper(curveHeight: curveHeight),
-        child: Container(
-          width: double.infinity,
-          color: AppColors.primary,
-          padding: EdgeInsets.fromLTRB(
-            AppSpacing.xl,
-            topInset + AppSpacing.xl,
-            AppSpacing.xl,
-            AppSpacing.xxl + curveHeight / 2, 
+    return CurvedBottomBanner(
+      curveHeight: curveHeight,
+      includeSafeTopPadding: true,
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.xl,
+        AppSpacing.xl, // safe area ditambahkan otomatis oleh wrapper
+        AppSpacing.xl,
+        AppSpacing.xxl + curveHeight / 2, // ruang ekstra agar arc tidak potong konten
+      ),
+      color: AppColors.primary,
+      overlayStyle: SystemUiOverlayStyle.light, // ikon status bar terang
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            greeting,
+            style: AppTypography.labelLarge.copyWith(
+              color: Colors.white.withOpacity(0.9),
+            ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                greeting,
-                style: AppTypography.labelLarge.copyWith(
-                  color: Colors.white.withOpacity(0.9),
-                ),
-              ),
-              SizedBox(height: AppSpacing.sm),
-              Text(
-                title,
-                style: AppTypography.headlineMedium.copyWith(
-                  color: Colors.white,
-                  height: 1.2,
-                ),
-              ),
-              SizedBox(height: AppSpacing.sm),
-              Text(
-                subtitle,
-                style: AppTypography.bodyMedium.copyWith(
-                  color: Colors.white.withOpacity(0.9),
-                ),
-              ),
-              SizedBox(height: AppSpacing.xl),
-              Center(
-                child: CircularScore(
-                  percent: percent,
-                  label: label,
-                  size: 200,
-                ),
-              ),
-            ],
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            title,
+            style: AppTypography.headlineMedium.copyWith(
+              color: Colors.white,
+              height: 1.2,
+            ),
           ),
-        ),
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            subtitle,
+            style: AppTypography.bodyMedium.copyWith(
+              color: Colors.white.withOpacity(0.9),
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xl),
+          Center(
+            child: CircularScore(
+              percent: percent,
+              label: label,
+              size: 200,
+            ),
+          ),
+        ],
       ),
     );
   }
-}
-
-class _BottomArcClipper extends CustomClipper<Path> {
-  final double curveHeight;
-  _BottomArcClipper({required this.curveHeight});
-
-  @override
-  Path getClip(Size size) {
-    final w = size.width;
-    final h = size.height;
-    final ch = curveHeight.clamp(0, 200); // avoid extreme
-
-    final path = Path()
-      ..lineTo(0, h - ch)
-      ..quadraticBezierTo(w / 2, h + ch, w, h - ch)
-      ..lineTo(w, 0)
-      ..close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant _BottomArcClipper oldClipper) =>
-      oldClipper.curveHeight != curveHeight;
-}
-
-class _BottomCurveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-    path.lineTo(0, size.height - 40);
-    path.quadraticBezierTo(
-      size.width / 2, size.height + 40,
-      size.width, size.height - 40,
-    );
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }

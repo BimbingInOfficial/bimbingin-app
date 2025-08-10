@@ -18,7 +18,7 @@ class GuruHomepageView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TopBanner(
+          const TopbannerHomepage(
             greeting: 'Halo Tenti! 👋',
             title: 'Gaya mengajar dominan\nAnda telah teridentifikasi!',
             subtitle: 'Yuk, optimalkan cara mengajar sesuai dengan gaya Anda',

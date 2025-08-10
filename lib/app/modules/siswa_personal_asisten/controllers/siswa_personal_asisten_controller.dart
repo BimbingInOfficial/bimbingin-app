@@ -18,7 +18,7 @@ class SiswaPersonalAsistenController extends GetxController {
         // Tetap di halaman ini
         break;
       case 2: // Ruang Belajar
-        Get.offAllNamed(Routes.SISWA_RUANGBELAJAR);
+        Get.offAllNamed(Routes.siswaRuangBelajar);
         break;
       case 3: // Profil
         Get.offAllNamed(Routes.siswaProfilepage);

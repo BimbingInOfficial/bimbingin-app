@@ -38,10 +38,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.guruChatBot,
+      name: _Paths.guruChatBot,
       page: () => const GuruChatbotView(),
       binding: GuruChatbotBinding(),
     ),
     GetPage(
+      name: _Paths.guruRuangBelajar,
       name: _Paths.guruRuangBelajar,
       page: () => const GuruRuangbelajarView(),
       binding: GuruRuangbelajarBinding(),
@@ -52,6 +54,7 @@ class AppPages {
       binding: GuruProfilepageBinding(),
     ),
     GetPage(
+      name: _Paths.root,
       name: _Paths.root,
       page: () => const RootView(),
       binding: RootBinding(),

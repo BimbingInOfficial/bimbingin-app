@@ -11,6 +11,7 @@ abstract class Routes {
   static const home = _Paths.home;
   static const auth = _Paths.auth;
   static const login = _Paths.login;
+  static const kuesionerSiswa = _Paths.kuesionerSiswa;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const home = '/home';
   static const auth = '/auth';
   static const login = '/login';
+  static const kuesionerSiswa = '/kuesioner-siswa';
 }

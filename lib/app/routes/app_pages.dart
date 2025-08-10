@@ -10,6 +10,8 @@ import '../modules/guru_profilepage/bindings/guru_profilepage_binding.dart';
 import '../modules/guru_profilepage/views/guru_profilepage_view.dart';
 import '../modules/guru_ruangbelajar/bindings/guru_ruangbelajar_binding.dart';
 import '../modules/guru_ruangbelajar/views/guru_ruangbelajar_view.dart';
+import '../modules/kuesioner/bindings/kuesioner_binding.dart';
+import '../modules/kuesioner/views/kuesioner_siswa_view.dart';
 import '../modules/root/bindings/root_binding.dart';
 import '../modules/root/views/root_view.dart';
 
@@ -18,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.root;
+  static const initial = Routes.kuesionerSiswa;
 
   static final routes = [
     GetPage(
@@ -38,12 +40,10 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.guruChatBot,
-      name: _Paths.guruChatBot,
       page: () => const GuruChatbotView(),
       binding: GuruChatbotBinding(),
     ),
     GetPage(
-      name: _Paths.guruRuangBelajar,
       name: _Paths.guruRuangBelajar,
       page: () => const GuruRuangbelajarView(),
       binding: GuruRuangbelajarBinding(),
@@ -55,9 +55,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.root,
-      name: _Paths.root,
       page: () => const RootView(),
       binding: RootBinding(),
+    ),
+    GetPage(
+      name: _Paths.kuesionerSiswa,
+      page: () => const KuesionerSiswaView(),
+      binding: KuesionerBinding(),
     ),
   ];
 }

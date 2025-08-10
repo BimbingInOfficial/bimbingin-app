@@ -6,6 +6,8 @@ import 'package:bimbingin_app/app/core/widgets/join_room_button.dart';
 import 'package:bimbingin_app/app/core/widgets/ruang_belajar_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class GuruRuangbelajarView extends StatelessWidget {
   const GuruRuangbelajarView({super.key});
@@ -74,11 +76,16 @@ class GuruRuangbelajarView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  RuangBelajarCard(
-                    title: 'Persiapan UTBK',
-                    siswaCount: 280,
-                    guruCount: 30,
-                    kodeRuangan: '7ztlbhtn',
+                  GestureDetector(
+                    onTap: (){
+                      Get.toNamed('/guru-ruang-belajar-detail');
+                    },
+                    child: RuangBelajarCard(
+                      title: 'Persiapan UTBK',
+                      siswaCount: 280,
+                      guruCount: 30,
+                      kodeRuangan: '7ztlbhtn',
+                    ),
                   ),
                   const SizedBox(height: AppSpacing.md),
                   RuangBelajarCard(

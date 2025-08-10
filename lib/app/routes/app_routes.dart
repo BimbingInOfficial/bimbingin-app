@@ -8,6 +8,7 @@ abstract class Routes {
   static const guruRuangBelajar = _Paths.guruRuangBelajar;
   static const guruProfilePage = _Paths.guruProfilePage;
   static const root = _Paths.root;
+  static const guruRuangBelajarDetail = _Paths.guruRuangBelajarDetail;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const guruRuangBelajar = '/guru-ruangbelajar';
   static const guruProfilePage = '/guru-profilepage';
   static const root = '/root';
+  static const guruRuangBelajarDetail = '/guru-ruang-belajar-detail';
 }

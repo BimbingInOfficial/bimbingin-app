@@ -10,6 +10,8 @@ import '../modules/guru_homepage/bindings/guru_homepage_binding.dart';
 import '../modules/guru_homepage/views/guru_homepage_view.dart';
 import '../modules/guru_profilepage/bindings/guru_profilepage_binding.dart';
 import '../modules/guru_profilepage/views/guru_profilepage_view.dart';
+import '../modules/guru_ruang_belajar_detail/bindings/guru_ruang_belajar_detail_binding.dart';
+import '../modules/guru_ruang_belajar_detail/views/guru_ruang_belajar_detail_view.dart';
 import '../modules/guru_ruangbelajar/bindings/guru_ruangbelajar_binding.dart';
 import '../modules/guru_ruangbelajar/views/guru_ruangbelajar_view.dart';
 import '../modules/kuesioner/bindings/kuesioner_binding.dart';
@@ -90,7 +92,7 @@ class AppPages {
       binding: SiswaHomepageBinding(),
     ),
     GetPage(
-      name: _Paths.SISWA_RUANGBELAJAR,
+      name: _Paths.siswaRuangBelajar,
       page: () => const SiswaRuangbelajarView(),
       binding: SiswaRuangbelajarBinding(),
     ),
@@ -103,6 +105,11 @@ class AppPages {
       name: _Paths.siswaProfilepage,
       page: () => const SiswaProfilepageView(),
       binding: SiswaProfilepageBinding(),
+    ),
+    GetPage(
+      name: _Paths.guruRuangBelajarDetail,
+      page: () => const GuruRuangBelajarDetailView(),
+      binding: GuruRuangBelajarDetailBinding(),
     ),
   ];
 }

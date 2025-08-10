@@ -3,6 +3,7 @@ import 'package:bimbingin_app/app/core/widgets/guru_kelompok_belajar.dart';
 import 'package:bimbingin_app/app/core/widgets/navbar.dart';
 import 'package:bimbingin_app/app/core/widgets/rekomendasi_button.dart';
 import 'package:bimbingin_app/app/core/widgets/siswa_kelompok.dart';
+import 'package:bimbingin_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -138,7 +139,9 @@ class GuruRuangBelajarDetailView
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 19,),
-                  RekomendasiButton(label: "Rekomendasi Metode", icon: Icons.lightbulb, onPressed: () {})
+                  RekomendasiButton(label: "Rekomendasi Metode", icon: Icons.lightbulb, onPressed: () {
+                    Get.toNamed(Routes.guruDetailRekomendasi);
+                  })
                 ],
               ),
             ),

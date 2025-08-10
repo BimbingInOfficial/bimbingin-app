@@ -6,6 +6,8 @@ import '../modules/auth/views/login_guru_view.dart';
 import '../modules/auth/views/login_siswa_view.dart';
 import '../modules/guru_chatbot/bindings/guru_chatbot_binding.dart';
 import '../modules/guru_chatbot/views/guru_chatbot_view.dart';
+import '../modules/guru_detail_rekomendasi/bindings/guru_detail_rekomendasi_binding.dart';
+import '../modules/guru_detail_rekomendasi/views/guru_detail_rekomendasi_view.dart';
 import '../modules/guru_homepage/bindings/guru_homepage_binding.dart';
 import '../modules/guru_homepage/views/guru_homepage_view.dart';
 import '../modules/guru_profilepage/bindings/guru_profilepage_binding.dart';
@@ -21,12 +23,12 @@ import '../modules/root/bindings/root_binding.dart';
 import '../modules/root/views/root_view.dart';
 import '../modules/siswa_homepage/bindings/siswa_homepage_binding.dart';
 import '../modules/siswa_homepage/views/siswa_homepage_view.dart';
-import '../modules/siswa_ruangbelajar/bindings/siswa_ruangbelajar_binding.dart';
-import '../modules/siswa_ruangbelajar/views/siswa_ruangbelajar_view.dart';
 import '../modules/siswa_personal_asisten/bindings/siswa_personal_asisten_binding.dart';
 import '../modules/siswa_personal_asisten/views/siswa_personal_asisten_view.dart';
 import '../modules/siswa_profilepage/bindings/siswa_profilepage_binding.dart';
 import '../modules/siswa_profilepage/views/siswa_profilepage_view.dart';
+import '../modules/siswa_ruangbelajar/bindings/siswa_ruangbelajar_binding.dart';
+import '../modules/siswa_ruangbelajar/views/siswa_ruangbelajar_view.dart';
 
 part 'app_routes.dart';
 
@@ -110,6 +112,11 @@ class AppPages {
       name: _Paths.guruRuangBelajarDetail,
       page: () => const GuruRuangBelajarDetailView(),
       binding: GuruRuangBelajarDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.guruDetailRekomendasi,
+      page: () => const GuruDetailRekomendasiView(),
+      binding: GuruDetailRekomendasiBinding(),
     ),
   ];
 }

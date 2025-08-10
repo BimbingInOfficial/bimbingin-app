@@ -19,6 +19,7 @@ abstract class Routes {
   static const siswaPersonalAsisten = _Paths.siswaPersonalAsisten;
   static const siswaProfilepage = _Paths.siswaProfilepage;
   static const guruRuangBelajarDetail = _Paths.guruRuangBelajarDetail;
+  static const guruDetailRekomendasi = _Paths.guruDetailRekomendasi;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const siswaPersonalAsisten = '/siswa-personal-asisten';
   static const siswaProfilepage = '/siswa-profilepage';
   static const guruRuangBelajarDetail = '/guru-ruang-belajar-detail';
+  static const guruDetailRekomendasi = '/guru-detail-rekomendasi';
 }

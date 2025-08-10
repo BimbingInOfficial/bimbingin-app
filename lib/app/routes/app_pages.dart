@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/auth/views/choose_role_view.dart';
-import '../modules/home/views/home_view.dart';
 import '../modules/guru_chatbot/bindings/guru_chatbot_binding.dart';
 import '../modules/guru_chatbot/views/guru_chatbot_view.dart';
 import '../modules/guru_homepage/bindings/guru_homepage_binding.dart';
@@ -13,20 +12,19 @@ import '../modules/guru_ruangbelajar/bindings/guru_ruangbelajar_binding.dart';
 import '../modules/guru_ruangbelajar/views/guru_ruangbelajar_view.dart';
 import '../modules/root/bindings/root_binding.dart';
 import '../modules/root/views/root_view.dart';
-import '../modules/home/bindings/home_binding.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.auth;
+  static const initial = Routes.root;
 
   static final routes = [
     GetPage(
       name: _Paths.home,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
+      page: () => const RootView(),
+      binding: RootBinding(),
     ),
     GetPage(
       name: _Paths.auth,
@@ -34,27 +32,27 @@ class AppPages {
       binding: AuthBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_HOMEPAGE,
+      name: _Paths.guruHomePage,
       page: () => const GuruHomepageView(),
       binding: GuruHomepageBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_CHATBOT,
+      name: _Paths.guruChatBot,
       page: () => const GuruChatbotView(),
       binding: GuruChatbotBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_RUANGBELAJAR,
+      name: _Paths.guruRuangBelajar,
       page: () => const GuruRuangbelajarView(),
       binding: GuruRuangbelajarBinding(),
     ),
     GetPage(
-      name: _Paths.GURU_PROFILEPAGE,
+      name: _Paths.guruProfilPage,
       page: () => const GuruProfilepageView(),
       binding: GuruProfilepageBinding(),
     ),
     GetPage(
-      name: _Paths.ROOT,
+      name: _Paths.root,
       page: () => const RootView(),
       binding: RootBinding(),
     ),

@@ -15,6 +15,9 @@ abstract class Routes {
   static const kuesionerSiswa = _Paths.kuesionerSiswa;
   static const kuesionerGuru = _Paths.kuesionerGuru;
   static const siswaHomepage = _Paths.siswaHomepage;
+  static const SISWA_RUANGBELAJAR = _Paths.SISWA_RUANGBELAJAR;
+  static const siswaPersonalAsisten = _Paths.siswaPersonalAsisten;
+  static const siswaProfilepage = _Paths.siswaProfilepage;
 }
 
 abstract class _Paths {
@@ -31,4 +34,7 @@ abstract class _Paths {
   static const kuesionerSiswa = '/kuesioner-siswa';
   static const kuesionerGuru = '/kuesioner-guru';
   static const siswaHomepage = '/siswa-homepage';
+  static const SISWA_RUANGBELAJAR = '/siswa-ruangbelajar';
+  static const siswaPersonalAsisten = '/siswa-personal-asisten';
+  static const siswaProfilepage = '/siswa-profilepage';
 }

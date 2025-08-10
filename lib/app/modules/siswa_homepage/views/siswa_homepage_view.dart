@@ -16,20 +16,6 @@ class SiswaHomepageView extends GetView<SiswaHomepageController> {
 
   @override
   Widget build(BuildContext context) {
-    // Placeholder pages untuk siswa (akan dibuat nanti)
-    final pages = const [
-      SiswaHomeContent(),
-      PlaceholderView(
-        title: 'Personal Asisten',
-        subtitle: 'Chat dengan AI untuk bantuan belajar',
-      ),
-      PlaceholderView(
-        title: 'Ruang Belajar',
-        subtitle: 'Bergabung dengan ruang belajar',
-      ),
-      PlaceholderView(title: 'Profil', subtitle: 'Kelola profil siswa'),
-    ];
-
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
@@ -39,12 +25,7 @@ class SiswaHomepageView extends GetView<SiswaHomepageController> {
         child: Column(
           children: [
             Expanded(
-              child: Obx(
-                () => IndexedStack(
-                  index: controller.currentIndex.value,
-                  children: pages,
-                ),
-              ),
+              child: SiswaHomeContent(), // Langsung tampilkan konten homepage
             ),
             // Navbar untuk siswa dengan debugging
             Obx(() {
@@ -213,45 +194,6 @@ class SiswaHomeContent extends StatelessWidget {
                 SizedBox(height: 18),
               ],
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// Placeholder view untuk tab yang belum dibuat
-class PlaceholderView extends StatelessWidget {
-  final String title;
-  final String subtitle;
-
-  const PlaceholderView({
-    super.key,
-    required this.title,
-    required this.subtitle,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.construction, size: 64, color: AppColors.textSecondary),
-          SizedBox(height: 16),
-          Text(
-            title,
-            style: AppTypography.titleLarge.copyWith(
-              color: AppColors.textPrimary,
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(
-            subtitle,
-            style: AppTypography.bodyMedium.copyWith(
-              color: AppColors.textSecondary,
-            ),
-            textAlign: TextAlign.center,
           ),
         ],
       ),

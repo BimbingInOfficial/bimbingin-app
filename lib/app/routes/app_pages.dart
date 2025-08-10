@@ -19,6 +19,12 @@ import '../modules/root/bindings/root_binding.dart';
 import '../modules/root/views/root_view.dart';
 import '../modules/siswa_homepage/bindings/siswa_homepage_binding.dart';
 import '../modules/siswa_homepage/views/siswa_homepage_view.dart';
+import '../modules/siswa_ruangbelajar/bindings/siswa_ruangbelajar_binding.dart';
+import '../modules/siswa_ruangbelajar/views/siswa_ruangbelajar_view.dart';
+import '../modules/siswa_personal_asisten/bindings/siswa_personal_asisten_binding.dart';
+import '../modules/siswa_personal_asisten/views/siswa_personal_asisten_view.dart';
+import '../modules/siswa_profilepage/bindings/siswa_profilepage_binding.dart';
+import '../modules/siswa_profilepage/views/siswa_profilepage_view.dart';
 
 part 'app_routes.dart';
 
@@ -82,6 +88,21 @@ class AppPages {
       name: _Paths.siswaHomepage,
       page: () => const SiswaHomepageView(),
       binding: SiswaHomepageBinding(),
+    ),
+    GetPage(
+      name: _Paths.SISWA_RUANGBELAJAR,
+      page: () => const SiswaRuangbelajarView(),
+      binding: SiswaRuangbelajarBinding(),
+    ),
+    GetPage(
+      name: _Paths.siswaPersonalAsisten,
+      page: () => const SiswaPersonalAsistenView(),
+      binding: SiswaPersonalAsistenBinding(),
+    ),
+    GetPage(
+      name: _Paths.siswaProfilepage,
+      page: () => const SiswaProfilepageView(),
+      binding: SiswaProfilepageBinding(),
     ),
   ];
 }
